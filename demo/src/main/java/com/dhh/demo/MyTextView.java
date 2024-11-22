@@ -17,7 +17,7 @@ import rx.functions.Action1;
  * Created by dhh on 2017/9/27.
  */
 
-public class MyTextView extends TextView {
+public class MyTextView extends android.support.v7.widget.AppCompatTextView {
     public MyTextView(Context context) {
         super(context);
     }

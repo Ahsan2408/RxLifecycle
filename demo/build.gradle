@@ -1,16 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    compileSdk 34
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.dhh.rxlifecycle"
-        minSdkVersion 14
-        targetSdkVersion 25
+        minSdk 21
+        targetSdk 33
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -18,29 +18,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'com.dhh.demo'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testCompile 'junit:junit:4.12'
-    compile project(path: ':rxlifecycle')
+    implementation project(path: ':rxlifecycle')
     //RxWebSocket
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
-    compile 'io.reactivex:rxjava:1.3.1'
-    compile 'com.dhh:websocket:1.3.0'
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
-    compile 'com.jakewharton.rxbinding:rxbinding:1.0.1'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.android.support:recyclerview-v7:25.3.1'
+    implementation 'io.reactivex:rxjava:1.3.1'
+    implementation 'com.dhh:websocket:1.3.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding:1.0.1'
     //rxjava2
-    compile project(path: ':rxlifecycle2')
-    compile 'io.reactivex.rxjava2:rxjava:2.1.5'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation project(path: ':rxlifecycle2')
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.5'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }
