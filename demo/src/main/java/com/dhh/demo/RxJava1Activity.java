@@ -11,7 +11,7 @@ import com.dhh.rxlifecycle.LifecycleManager;
 import com.dhh.rxlifecycle.LifecycleTransformer;
 import com.dhh.rxlifecycle.RxLifecycle;
 import com.dhh.rxlifecycle.retrofit.HttpHelper;
-import com.dhh.websocket.RxWebSocketUtil;
+//import com.dhh.websocket.RxWebSocketUtil;
 import com.jakewharton.rxbinding.view.RxView;
 
 import java.io.IOException;
@@ -202,15 +202,15 @@ public class RxJava1Activity extends AppCompatActivity {
         Observable.just(1)
                 .compose(RxLifecycle.with(this).<Integer>bindToLifecycle())
                 .subscribe();
-        RxWebSocketUtil.getInstance().setShowLog(BuildConfig.DEBUG);
-        RxWebSocketUtil.getInstance().getWebSocketString("ws://127.0.0.1:8089")
-                .compose(RxLifecycle.with(this).<String>bindToLifecycle())
-                .subscribe(new Action1<String>() {
-                    @Override
-                    public void call(String s) {
-
-                    }
-                });
+//        RxWebSocketUtil.getInstance().setShowLog(BuildConfig.DEBUG);
+//        RxWebSocketUtil.getInstance().getWebSocketString("ws://127.0.0.1:8089")
+//                .compose(RxLifecycle.with(this).<String>bindToLifecycle())
+//                .subscribe(new Action1<String>() {
+//                    @Override
+//                    public void call(String s) {
+//
+//                    }
+//                });
     }
 
     @Override
